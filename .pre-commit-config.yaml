@@ -1,7 +1,7 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
-- repo: https://github.com/ambv/black
+- repo: https://github.com/psf/black
   rev: stable
   hooks:
   - id: black
@@ -11,12 +11,20 @@ repos:
   hooks:
   - id: flake8
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.1.0
+  rev: v2.5.0
   hooks:
   - id: end-of-file-fixer
   - id: trailing-whitespace
+    args: [--markdown-linebreak-ext=md]
+  - id: check-added-large-files
+    args: [--maxkb=3072]
+  - id: check-toml
+  - id: check-yaml
+  - id: detect-aws-credentials
+    # args: [--credentials-file CREDENTIALS_FILE]
+    # args: [--allow-missing-credentials]
 - repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
-  sha: v1.0.3
+  rev: v1.0.3
   hooks:
   - id: python-bandit-vulnerability-check
     args: [-l, --recursive, -x, tests]

@@ -6,7 +6,7 @@ authors = [
   "William Skertic <wskertic@gmail.com>"
 ]
 license = "GNU AGPLv3"
-readme = "README"
+readme = "README.md"
 python = "^3.6"
 homepage = "https://github.com/wskertic/furry-dollop"
 repository = "https://github.com/wskertic/furry-dollop"
@@ -14,8 +14,21 @@ documentation = "https://github.com/wskertic/furry-dollop"
 
 keywords = ["nabirds"]
 
+# Requirements
+# [dependencies]
+# boto3 = "^version"
+
+[dev-dependencies]
+black = { version = "^19.3b0", python = "^3.6" }
+pre-commit = { version = "^2.2.0" }
+
+# [scripts]
+# poetry = "infer_pyproject.cli:main"
+
+# [build-system]
+
 [tool.black]
-py36 = true
+target-version = ['py37']
 include = '\.pyi?$'
 exclude = '''
 /(
