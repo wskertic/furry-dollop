@@ -1,17 +1,23 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
-- repo: https://github.com/psf/black
-  rev: stable
+# - repo: https://github.com/psf/black
+  # rev: 19.10b0
+- repo: .env/dev_dependencies/black-master
+  rev: master
   hooks:
   - id: black
     language_version: python3.7
-- repo: https://gitlab.com/pycqa/flake8
-  rev: 3.7.9
+# - repo: https://gitlab.com/pycqa/flake8
+#   rev: 3.7.9
+- repo: .env/dev_dependencies/flake8-master
+  rev: master
   hooks:
   - id: flake8
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.5.0
+# - repo: https://github.com/pre-commit/pre-commit-hooks
+#   rev: v2.5.0
+- repo: .env/dev_dependencies/pre-commit-hooks-master
+  rev: master
   hooks:
   - id: end-of-file-fixer
   - id: trailing-whitespace
@@ -23,8 +29,10 @@ repos:
   - id: detect-aws-credentials
     # args: [--credentials-file CREDENTIALS_FILE]
     # args: [--allow-missing-credentials]
-- repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
-  rev: v1.0.3
+# - repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
+#   rev: v1.0.3
+- repo: .env/dev_dependencies/pre-commit-hooks-bandit-master
+  rev: master
   hooks:
   - id: python-bandit-vulnerability-check
     args: [-l, --recursive, -x, tests]

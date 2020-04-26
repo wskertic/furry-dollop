@@ -128,3 +128,6 @@ venv.bak/
 *.docx
 *.rtf
 *.wpf
+
+# offline sources
+.env/dev_dependencies/
