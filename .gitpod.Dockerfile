@@ -32,7 +32,9 @@ RUN sudo chmod +x /usr/bin/tini
 # More information: https://www.gitpod.io/docs/config-docker/
 
 RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    echo "conda activate base" >> ~/.bashrc
+    echo "conda activate base" >> ~/.bashrc && \
+    conda update -n base -c defaults conda && \
+    conda config --append channels conda-forge
 
 ENTRYPOINT [ "/usr/bin/tini", "--"]
 CMD [ "/bin/bash" ]
