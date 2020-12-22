@@ -18,7 +18,7 @@ RUN sudo apt-get update --fix-missing && \
 #     /opt/conda/bin/conda clean -tipsy && \
 #     sudo ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
-ENV TINI_VERSION v0.16.1
+ENV TINI_VERSION=v0.16.1
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
 RUN sudo chmod +x /usr/bin/tini
 
@@ -33,6 +33,8 @@ RUN sudo chmod +x /usr/bin/tini
 
 RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install flake8-black nb_black pre_commit
+
+# ENV PIP_USER=false
     
 # RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
 #     echo "conda activate base" >> ~/.bashrc
