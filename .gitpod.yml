@@ -1,7 +1,8 @@
 tasks:
-  - init: echo "Replace me with a build script for the project."
+  # - init: echo "Replace me with a build script for the project."
     # command: echo "Replace me with something that should run on every start, or just
     #   remove me entirely."
-    command: export PIP_USER=false && pre-commit install && pre-commit run --all-files
+  - init: export PIP_USER=false && pre-commit install
+    command: pre-commit run --all-files
 image:
   file: .gitpod.Dockerfile
