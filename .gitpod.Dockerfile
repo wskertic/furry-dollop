@@ -34,7 +34,7 @@ RUN sudo chmod +x /usr/bin/tini
 RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install flake8-black nb_black pre_commit
 
-# ENV PIP_USER=false
+ENV PIP_USER=false
     
 # RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
 #     echo "conda activate base" >> ~/.bashrc
