@@ -31,8 +31,8 @@ repos:
   - id: detect-aws-credentials
     # args: [--credentials-file CREDENTIALS_FILE]
     args: [--allow-missing-credentials]
-- repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
-  rev: v1.0.3
+# - repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
+#   rev: v1.0.3
 # - repo: .env/dev_dependencies/pre-commit-hooks-bandit-master
 #   rev: master
   # hooks:
